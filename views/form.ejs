@@ -1,0 +1,21 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message Board</title>
+    <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+    <%- include('header') %>
+    <form method="POST" action="/new">
+        <h1>New Message</h1>
+        <label for="user">Name:</label>
+        <input maxlength="20" name = "user" type="text" id = "user">
+        <label for="text">Message:</label>
+        <input maxlength = '50' name = "text" type="text" id = "text">
+        <button class = "submit" type = "submit" >Submit</button>
+        
+     </form>
+</body>
+</html>

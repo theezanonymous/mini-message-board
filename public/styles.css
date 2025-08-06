@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Chalk,sans-serif;
+    color: black;
+    
+}
+:root{
+    --boardColor: #274C43;
+}
+@font-face {
+    font-family: Chalk;
+    src: url(/Chalk2.ttf);
+}
+.docHeader{
+    color: white; 
+    text-align: center;
+    padding-top: 4vh; font-size: 7vh;
+}
+body{
+    overflow: hidden;
+    border: solid #C19A6B 30px;
+    border-bottom: 0;
+    height: 100vh;
+    background-color: var(--boardColor);
+    
+
+    
+}
+.newMessageButton{
+    border: solid white 5px;
+    background-color: greenyellow;
+    border-radius: 100%;
+    width: 100px; height: 100px;
+    display: flex; justify-content: center; align-items: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: black 1px 1px 1px;
+    position: fixed;
+    left: 90vw; top: 80vh;
+    
+}
+.newMessageButton:hover{
+    transform: scale(1.1) rotate(30deg);
+    /* animation: 0.5s alternate waverPen; */
+    animation-fill-mode: forwards;
+    box-shadow: black 2px 2px 2px;
+}
+@keyframes waverPen{
+    from{
+        rotate: -30deg;
+    }
+
+    to{
+        rotate: 30deg;
+    }
+}
+.newMessageButton img{
+    width: 70px; height: 70px;
+}
+form{
+    display: grid;
+    grid-template-columns: 1fr;
+
+}
+.message{
+    font-size: 3vh;
+    background-image: url("/stickyNote.webp");
+    width: 350px; height: 350px;
+    background-size: 400px 425px;
+    display: grid; grid-template-rows: 3fr 1fr;
+    justify-content: center; align-items: end;
+    padding: 60px 10px 60px 10px;
+    background-position: center center;
+    box-sizing: content-box;
+    text-align: center;
+    background-repeat:no-repeat;
+    transition: 0.7s ease-in-out;
+}
+.message:hover{
+    scale: 1.05;
+    animation: 2s infinite shake;
+    position: relative;
+    opacity: 0.9;
+
+   
+
+}
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+  }
+.messageText{
+    width: 250px;
+    height: 100px;
+    word-wrap: break-word;
+    margin-top: 10px;
+    font-size: 4vh;
+    
+
+}
+.messageUser .messageDate{
+    font-size: 2vh;
+}
+
+.messageGrid{
+    display: flex; flex-wrap: wrap; 
+    column-gap: 15px;
+
+    align-items: center; 
+    margin-left: 10vw;
+    overflow-y: scroll;
+    height: 80vh;
+    
+}
+form{
+    display: grid;
+    gap: 2vh;
+}
+form *{
+    color: white;
+     width: 45vw; margin: auto;
+    border-radius: 20px;
+    text-shadow: 1px 1px 1px black;
+}
+label{
+    font-size: 3vh;
+}
+input{
+    background-color:var(--boardColor);
+    transition: 0.3s ease; text-align: center;
+    height: 5vh; font-size: 3vh;
+    padding-top: 10px; padding-bottom: 10px;
+}
+input:focus{
+    outline: none;
+    border: 3px solid lightgreen; opacity: 0.7;
+    scale: 1.05;
+}
+.submit{
+    background-color: green;
+    height: 5vh; width: 300px;
+    transition: 0.3s ease;
+    margin-top: 5vh;
+}
+.submit:hover{
+    opacity: 0.7;
+    width: 500px;
+    border: 3px solid lightgreen;
+}
+form h1{
+    font-size: 5vh; margin-top: 3vh;
+}

@@ -1,25 +1,17 @@
 const {Router} = require('express')
 const express = require('express')
 const indexRouter = Router()
+const db = require('../db/queries.js')
 indexRouter.use(express.urlencoded({ extended: true }));
-const messages = [
-    {
-      text: "Hi there!",
-      user: "Amando",
-      added: new Date()
-    },
-    {
-      text: "Hello World!",
-      user: "Charles",
-      added: new Date()
-    }
-  ];
-indexRouter.get('/',(req,res)=>{
+
+
+indexRouter.get('/',async (req,res)=>{
+    const messages = await db.getMessages()
     res.render("index", {messages: messages})
 })
-indexRouter.get("/new", (req, res) => res.render("form"));
-indexRouter.post("/new", (req, res)=>{
-    messages.push({ text: req.body.text, user: req.body.user, added: new Date() });
+indexRouter.get("/new", async (req, res) => res.render("form"));
+indexRouter.post("/new", async (req, res)=>{
+    await db.insertMessage(req.body.name, req.body.message, (new Date()).toDateString() );
     res.redirect("/")
 } )
 

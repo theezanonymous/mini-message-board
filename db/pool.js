@@ -1,6 +1,6 @@
 const {Pool} = require('pg');
 const { connectionString } = require('pg/lib/defaults');
-require('dotenv').config()
+// require('dotenv').config()
 module.exports = new Pool({
     // host: "localhost", // or wherever the db is hosted
     // user: "leonliu",
